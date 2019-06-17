@@ -9,16 +9,10 @@ $hurvitz_acf_pro = class_exists('acf_pro');
 
 get_header();
 
-if ( $hurvitz_acf_pro && have_rows( 'templates' ) ):
-	while ( have_rows( 'templates' ) ) : the_row();
+if ( $hurvitz_acf_pro && have_rows( 'shortcodes' ) ):
+	while ( have_rows( 'shortcodes' ) ) : the_row();
 
-		$template_parts = ['about', 'services', 'pricing', 'counter', 'clients', 'contacts', 'contact_form', 'portfolio', 'skills', 'experience'];
-
-		foreach ( $template_parts as $part ) :
-			if ( get_row_layout() == $part ):
-				get_template_part( 'template-parts/content', $part );
-			endif;
-		endforeach;
+		get_template_part( 'template-parts/content', get_row_layout() );
 
 	endwhile;
 endif;

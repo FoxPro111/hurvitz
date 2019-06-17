@@ -10,13 +10,10 @@
  */
 
 ?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div><!-- #content -->
-</div><!-- #page -->
+
+</div><!-- .hero -->
+
+<?php get_template_part('template-parts/content-footer'); ?>
 
 <?php wp_footer(); ?>
 

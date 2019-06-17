@@ -153,7 +153,7 @@ function hurvitz_scripts() {
 //    wp_enqueue_style( 'simple-line-icons',                get_template_directory_uri() .'/assets/css/libs/simple-line-icons.css' );
 //    wp_enqueue_style( 'bootstrap',                      get_template_directory_uri() .'/assets/css/libs/bootstrap.min.css' );
 //    wp_enqueue_style( 'custom-scrollbar-styles',                      get_template_directory_uri() .'/assets/css/libs/jquery.mCustomScrollbar.css' );
-    wp_enqueue_style( 'hurvitz-theme-styles',    get_template_directory_uri() .'/assets/css/main.min.css' );
+    wp_enqueue_style( 'hurvitz-theme-styles',    get_template_directory_uri() .'/assets/css/main.css' );
 
 
 	wp_enqueue_script( 'hurvitz', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '', true );

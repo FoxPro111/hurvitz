@@ -1,40 +1,20 @@
 /* ====== PART SECTION IMPORT ====== */
 
-@import "generated-classes";
+@import  'bootstrap-scss/bootstrap-reboot';
+@import  'bootstrap-scss/bootstrap-grid';
+
+
 @import "variables";
-@import "libs/normalize";
-
 @import "global";
-@import "custom-cursor";
-@import "preloader";
-@import "scrollbar";
-@import "custom-classes";
-@import "libs/animation";
+@import "generated-classes";
 
-@import "page";
-@import "sidebar";
-@import "nav";
-@import "person";
-@import "blog";
-@import "blog-detail";
+@import "preloader";
 @import "not-found";
 
 
 /* ====== SHORTCODE SECTION IMPORT ====== */
 
-@import "shortcodes/buttons";
-@import "shortcodes/about-sc";
-@import "shortcodes/services-sc";
-@import "shortcodes/pricing-sc";
-@import "shortcodes/counter-sc";
-@import "shortcodes/clients-sc";
-@import "shortcodes/contacts-sc";
-@import "shortcodes/portfolio-sc";
-@import "shortcodes/contact-form_sc";
-@import "shortcodes/skills-sc";
-@import "shortcodes/experience-sc";
-
 
 /* ====== MEDIAQUERY IMPORT ====== */
 
-@import "mediaquery";
+
