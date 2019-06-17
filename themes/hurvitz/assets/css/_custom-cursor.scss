@@ -1,0 +1,33 @@
+/* ====== CUSTOM CURSOR STYLES  ====== */
+
+//CUSTOM CURSOR
+@media (min-width: 768px) {
+  .circle-cursor {
+    position: fixed;
+    left: 0;
+    top: 0;
+    pointer-events: none;
+    border-radius: 50%;
+    &--outer {
+      width: 30px;
+      height: 30px;
+      border: 1px solid var(--c-primary);
+      z-index: 12000;
+      background-color: transparent;
+    }
+    &--inner {
+      width: 5px;
+      height: 5px;
+      left: -2.5px;
+      top: -2.5px;
+      z-index: 11000;
+      background: var(--c-primary);
+    }
+  }
+
+  .unit{
+    .circle-cursor{
+      display: none;
+    }
+  }
+}
