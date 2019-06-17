@@ -20,6 +20,5 @@ Thumbs.db
 # But not these files...
 !.gitignore
 !themes/hurvitz
-!themes/hurvitz-child-theme
-!plugins/hurvitz-plugins
+!plugins/advanced-custom-fields-pro
 # etc...
