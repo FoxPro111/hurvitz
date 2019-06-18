@@ -1,0 +1,27 @@
+.hr-footer {
+  background-color: var(--c-blue);
+  padding: 15px 0;
+  margin-top: auto;
+
+  &__wrap {
+	p,
+	ul,
+	ol,
+	a {
+	  color: #fff;
+	}
+
+	p {
+	  margin-bottom: 0;
+	}
+
+	a {
+	  font-weight: bold;
+
+	  &:hover {
+		opacity: 0.7;
+	  }
+	}
+  }
+}
+

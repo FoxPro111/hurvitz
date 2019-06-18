@@ -1,8 +1,8 @@
 /* ====== PAGE TEMPLATE STYLES  ====== */
 
-.admin-bar{
-  .site-content{
-    padding-top: 32px;
-    margin-top: -32px;
-  }
+.hr-page {
+  min-height: calc(100vh - var(--admin-bar-height));
+  display: flex;
+  flex-direction: column;
 }
+

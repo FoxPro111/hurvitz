@@ -11,9 +11,11 @@
 
 ?>
 
-</div><!-- .hero -->
+	</div><!-- .hero -->
 
-<?php get_template_part('template-parts/content-footer'); ?>
+	<?php get_template_part('template-parts/content-footer'); ?>
+
+</div>
 
 <?php wp_footer(); ?>
 

@@ -1,5 +1,11 @@
 /* ====== GLOBAL STYLES  ====== */
 
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
 body {
   direction: rtl;
   text-align: right;
@@ -69,4 +75,21 @@ p,
 ul,
 ol {
   margin: 0 0 20px
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.t-center {
+  text-align: center;
+}
+
+.t-right {
+  text-align: right;
+}
+
+.t-left {
+  text-align: left;
 }

@@ -45,7 +45,7 @@ if ( ! function_exists( 'hurvitz_setup' ) ) :
 		// This theme uses wp_nav_menu() in one location.
 
 		register_nav_menus( array(
-			'left-menu' => esc_html__( 'Primary Menu', 'hurvitz' ),
+			'primary' => esc_html__( 'Primary Menu', 'hurvitz' ),
 		) );
 
 
@@ -149,10 +149,6 @@ function hurvitz_scripts() {
 	// register style
 	wp_enqueue_style( 'hurvitz-theme-css', get_template_directory_uri() . '/style.css' );
 	//Enqueue styles
-//    wp_enqueue_style( 'icons-styles',                get_template_directory_uri() .'/assets/css/libs/fontawesome.min.css' );
-//    wp_enqueue_style( 'simple-line-icons',                get_template_directory_uri() .'/assets/css/libs/simple-line-icons.css' );
-//    wp_enqueue_style( 'bootstrap',                      get_template_directory_uri() .'/assets/css/libs/bootstrap.min.css' );
-//    wp_enqueue_style( 'custom-scrollbar-styles',                      get_template_directory_uri() .'/assets/css/libs/jquery.mCustomScrollbar.css' );
     wp_enqueue_style( 'hurvitz-theme-styles',    get_template_directory_uri() .'/assets/css/main.css' );
 
 

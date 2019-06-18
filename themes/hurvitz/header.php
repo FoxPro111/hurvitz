@@ -20,7 +20,8 @@
 
 <body <?php body_class(); ?>>
 
-	<?php get_template_part('template-parts/content-header'); ?>
+	<div class="hr-page">
+		<?php get_template_part('template-parts/content-header'); ?>
 
-    <div class="hero">
-		<?php get_template_part('template-parts/content-page'); ?>
+		<div class="hero">
+			<?php get_template_part('template-parts/content-page'); ?>

@@ -47,6 +47,12 @@ gulp.task('minify-js', function () {
 		.pipe(gulp.dest(pathJS));
 });
 
+// icons - only one time
+gulp.task('icons', function() {
+	return gulp.src('node_modules/@fortawesome/fontawesome-free/webfonts/*')
+		.pipe(gulp.dest('./themes/hurvitz/assets/css/webfonts/'));
+});
+
 gulp.task('watch', function () {
 	gulp.watch([pathSCSS + '*.scss', pathSCSS + '**/*.scss'], ['scss']);
 	gulp.watch(pathJS + 'script.js', ['minify-js']);
