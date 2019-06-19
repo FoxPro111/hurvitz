@@ -13,27 +13,32 @@
  */
 
 get_header();
-?>
 
-	<div id="primary" class="content-area">
-		<main id="main" class="site-main">
+$hurvitz_acf_pro = class_exists('acf_pro');
+if ( $hurvitz_acf_pro && have_rows( 'shortcodes' ) ):
+	while ( have_rows( 'shortcodes' ) ) : the_row();
 
-		<?php
-		while ( have_posts() ) :
-			the_post();
+		get_template_part( 'template-parts/content', get_row_layout() );
 
-			get_template_part( 'template-parts/content', get_the_ID() );
+	endwhile;
+else:
+	?>
 
-			// If comments are open or we have at least one comment, load up the comment template.
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
+	<div class="hr-editor">
+		<div class="container">
+			<?php if (have_posts()) :
+				while (have_posts()) :
+					the_post(); ?>
 
-		endwhile; // End of the loop.
-		?>
+					<h1><?php echo get_the_title(); ?></h1>
+					<?php the_content(); ?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+				<?php endwhile;
+			endif; ?>
+		</div>
+	</div>
 
-<?php
+	<?php
+endif;
+
 get_footer();

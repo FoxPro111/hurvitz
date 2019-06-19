@@ -29,6 +29,7 @@ if (empty($slides)) {
 				</div>
 			<?php } ?>
 		</div>
+		<div class="swiper-pagination"></div>
 		<div class="swiper-button-prev">
 			<i class="fas fa-chevron-right"></i>
 		</div>

@@ -6,3 +6,20 @@
   flex-direction: column;
 }
 
+.hr-section {
+  padding-top: calc(30px + 2.5vw); //
+
+  &:last-of-type {
+    padding-bottom: calc(30px + 2.5vw);
+  }
+
+  &__title {
+    margin-bottom: calc(20px + 1.5vw);
+    font-size: 30px;
+    text-align: center;
+
+    @media (max-width: 991px) {
+      font-size: 24px;
+    }
+  }
+}
