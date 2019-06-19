@@ -6,6 +6,7 @@ $menu-animation: 0.2s;
   width: 100%;
   left: 0;
   top: var(--admin-bar-height);
+  z-index: 100;
 
   .menu-primary-menu-container {
     padding-top: 15px;
@@ -61,12 +62,15 @@ $menu-animation: 0.2s;
     max-width: 75%;
     padding-right: 50px;
     flex: 1;
+    display: flex;
+    flex-direction: column;
   }
 
   &__bar-wrap {
     display: flex;
     justify-content: space-between;
     font-size: 14px;
+    order: -1;
 
     a {
       color: #fff;
@@ -166,11 +170,9 @@ $menu-animation: 0.2s;
       background-color: var(--c-blue);
       width: 270px;
       padding: 50px 30px 30px;
-      display: flex;
-      flex-direction: column-reverse;
-      justify-content: space-between;
       overflow: auto;
       transition: $menu-animation * 2 transform;
+      display: block;
 
       .is-opened & {
         transform: translateX(0);
@@ -206,6 +208,18 @@ $menu-animation: 0.2s;
 
       li {
         margin-bottom: 10px;
+      }
+
+      > li {
+        > a {
+          &:hover {
+            opacity: 0.7;
+          }
+
+          &::after {
+            display: none;
+          }
+        }
       }
     }
 

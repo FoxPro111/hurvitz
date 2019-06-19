@@ -26,6 +26,8 @@ $phone_number = get_field( 'phone_number', 'option' );
 				</a>
 			<?php } ?>
 			<div class="hr-header__nav">
+				<?php echo hurvitz_main_menu(); ?>
+
 				<div class="hr-header__bar-wrap">
 					<?php if ($popup_button_name) { ?>
 						<div class="hr-header__popup">
@@ -46,8 +48,6 @@ $phone_number = get_field( 'phone_number', 'option' );
 						</div>
 					<?php } ?>
 				</div>
-
-				<?php echo hurvitz_main_menu(); ?>
 			</div>
 			<a class="hr-header__burger js-menu-burger" href="#">
 				<span></span>

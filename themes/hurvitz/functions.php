@@ -140,18 +140,17 @@ if ( ! function_exists( 'hurvitz_fonts_url' ) ) {
  * Enqueue scripts and styles.
  */
 function hurvitz_scripts() {
-	$api_key =  class_exists('acf_pro') ? get_field('api_key', 'option') : false;
-	$enable_onepage_style = class_exists('acf_pro') ? get_field('enable_onepage_style', 'option') : false;
-
 	wp_enqueue_style( 'hurvitz-fonts', hurvitz_fonts_url(), array(), '1.0.0' );
 
 
 	// register style
-	wp_enqueue_style( 'hurvitz-theme-css', get_template_directory_uri() . '/style.css' );
+	wp_enqueue_style( 'hurvitz-theme', get_template_directory_uri() . '/style.css' );
 	//Enqueue styles
-    wp_enqueue_style( 'hurvitz-theme-styles',    get_template_directory_uri() .'/assets/css/main.css' );
+    wp_enqueue_style( 'swiper',    get_template_directory_uri() .'/assets/css/swiper.min.css' );
+    wp_enqueue_style( 'hurvitz-main',    get_template_directory_uri() .'/assets/css/main.css' );
 
 
+	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array( 'jquery' ), '', true );
 	wp_enqueue_script( 'hurvitz', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '', true );
 
 
