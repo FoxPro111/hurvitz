@@ -60,9 +60,11 @@ $popup_title = get_field('popup_contact_form_title', 'option');
 
 <?php if ($contact_id) { ?>
 	<div class="hr-popup js-popup">
+		<a href="#" class="js-popup-close hr-popup__close"><i class="fas fa-times"></i></a>
 		<?php if ($popup_title) { ?>
 			<h3 class="hr-popup__title"><?php echo esc_html($popup_title); ?></h3>
 		<?php } ?>
 		<?php echo do_shortcode( '[contact-form-7 id="' . $contact_id . '"]' ); ?>
 	</div>
+	<div class="js-popup-close hr-popup__bg"></div>
 <?php } ?>

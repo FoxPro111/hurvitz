@@ -1,8 +1,96 @@
 .hr-popup {
   position: fixed;
-  max-width: 300px;
+  width: 450px;
+  max-width: calc(100% - 30px);
   background-color: var(--c-white);
   top: 50%;
   left: 50%;
-  transform: translate(-50%);
+  transform: translate(-50%, -50%);
+  z-index: 300;
+  padding: 25px;
+  opacity: 0;
+  margin-top: 30px;
+  visibility: hidden;
+  transition: 0.35s;
+
+  &.is-opened {
+    opacity: 1;
+    visibility: visible;
+    margin-top: 0;
+  }
+
+  &__bg {
+    position: fixed;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(#000, 0.7);
+    z-index: 299;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.35s;
+
+    .is-opened + & {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    left: 25px;
+    top: 25px;
+    color: var(--c-dark);
+    font-size: 20px;
+
+    &:hover {
+      color: var(--c-blue);
+    }
+  }
+
+  .wpcf7 {
+    direction: rtl;
+
+    .wpcf7-form-control-wrap {
+      display: block;
+    }
+
+    label {
+      display: block;
+    }
+
+    input,
+    textarea {
+      display: block;
+      width: 100%;
+    }
+
+    input {
+      &[type="submit"] {
+        margin-top: 25px;
+      }
+    }
+
+    p {
+      margin-bottom: 15px;
+      position: relative;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  div.wpcf7 .ajax-loader {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+  }
+
+  .wpcf7-response-output {
+    font-size: 14px;
+    margin: 0;
+  }
 }

@@ -149,3 +149,45 @@ img {
 .t-left {
   text-align: left;
 }
+
+input[type="text"],
+input[type="email"],
+textarea {
+  max-width: 100%;
+  padding: 5px 15px;
+  font-size: 15px;
+  box-shadow: none;
+
+  &:focus {
+    border-color: var(--c-blue);
+    outline: 0;
+  }
+}
+
+textarea {
+  height: 60px;
+  resize: none;
+}
+
+label {
+  max-width: 100%;
+  font-size: 14px;
+}
+
+input[type="submit"] {
+  -webkit-appearance: none;
+  padding: 10px;
+  margin: 0;
+  border: 1px solid var(--c-blue);
+  color: var(--c-white);
+  background-color: var(--c-blue);
+  font-size: 18px;
+  display: block;
+  box-shadow: none;
+  outline: 0;
+  transition: 0.35s;
+
+  &:hover {
+    opacity: 0.8;
+  }
+}

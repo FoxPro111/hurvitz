@@ -184,6 +184,12 @@
 		$('.js-popup').addClass('is-opened');
 	});
 
+	$('.js-popup-close').on('click', function (e) {
+		e.preventDefault();
+
+		$('.js-popup').removeClass('is-opened');
+	});
+
 
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
