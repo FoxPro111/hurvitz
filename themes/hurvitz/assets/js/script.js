@@ -191,9 +191,9 @@
 	});
 
 	function menuArrows() {
-		if (window.outerWidth <= 1024) {
+		if ($(window).outerWidth() <= 1024) {
 			if (!$('.menu-item-has-children i').length) {
-				$('header .menu-item-has-children').append('<i class="fa fa-angle-down js-btn-mobile"></i>');
+				$('.menu-item-has-children').append('<i class="fa fa-angle-down js-btn-mobile"></i>');
 			}
 
 			$('.js-btn-mobile').on('click', function () {
