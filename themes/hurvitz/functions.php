@@ -147,6 +147,8 @@ function hurvitz_scripts() {
 	wp_enqueue_style( 'hurvitz-theme', get_template_directory_uri() . '/style.css' );
 	//Enqueue styles
     wp_enqueue_style( 'swiper',    get_template_directory_uri() .'/assets/css/swiper.min.css' );
+    wp_enqueue_style( 'bootstrap',    get_template_directory_uri() .'/assets/css/bootstrap.css' );
+    wp_enqueue_style( 'font-awesome',    get_template_directory_uri() .'/assets/css/font-awesome.css' );
     wp_enqueue_style( 'hurvitz-main',    get_template_directory_uri() .'/assets/css/main.css' );
 
 

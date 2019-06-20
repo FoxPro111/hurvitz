@@ -191,3 +191,14 @@ input[type="submit"] {
     opacity: 0.8;
   }
 }
+
+.js-bg {
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+
+.s-back-switch {
+  background-position: 50%;
+  background-size: cover;
+}

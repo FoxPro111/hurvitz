@@ -14,7 +14,7 @@ const pathSCSS = './themes/hurvitz/assets/css/';
 const pathJS   = './themes/hurvitz/assets/js/';
 
 gulp.task('scss', function () {
-	return gulp.src(pathSCSS + 'main.scss')
+	return gulp.src([pathSCSS + 'main.scss', pathSCSS + 'bootstrap.scss', pathSCSS + 'font-awesome.scss'])
 		.pipe(sourcemaps.init())
 		.pipe(plumber())
 		.pipe(sass({

@@ -23,6 +23,33 @@
 		}
 	};
 
+	/*=================================*/
+	/* ADD IMAGE ON BACKGROUND */
+
+	/*=================================*/
+	function wpc_add_img_bg(img_sel, parent_sel) {
+		if (!img_sel) {
+			return false;
+		}
+
+		var $parent, $imgDataHidden, _this;
+		$(img_sel).not('.is-complete').each(function () {
+			_this          = $(this);
+			$imgDataHidden = _this.data('s-hidden');
+			$parent        = _this.closest(parent_sel);
+			$parent        = $parent.length ? $parent : _this.parent();
+			$parent.css('background-image', 'url(' + this.src + ')').addClass('s-back-switch');
+			if ($imgDataHidden) {
+				_this.css('visibility', 'hidden');
+				_this.show();
+			}
+			else {
+				_this.hide();
+			}
+			_this.addClass('is-complete');
+		});
+	}
+
 
 	/*=================================*/
 	/* IS TOUCH DEVICE */
@@ -254,6 +281,7 @@
 		calcHeaderOffset();
 		menuArrows();
 		initSwiper();
+		wpc_add_img_bg('.js-bg');
 	});
 
 
