@@ -178,6 +178,13 @@
 	/* ----------------------- */
 	/* ---- CLICK HANDLER ---- */
 	/* ----------------------- */
+	$('.js-popup-btn').on('click', function (e) {
+		e.preventDefault();
+
+		$('.js-popup').addClass('is-opened');
+	});
+
+
 	$('a[href^="#"]').on('click', function (e) {
 		e.preventDefault();
 		const elem = $(this).attr('href');

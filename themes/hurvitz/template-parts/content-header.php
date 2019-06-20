@@ -13,6 +13,8 @@ $popup_button_name = get_field( 'popup_button_name', 'option' );
 $popup_contact_form_id = get_field( 'popup_contact_form_id', 'option' );
 $address_link = get_field( 'address_link', 'option' );
 $phone_number = get_field( 'phone_number', 'option' );
+$contact_id = get_field('popup_contact_form_id', 'option');
+$popup_title = get_field('popup_contact_form_title', 'option');
 
 ?>
 
@@ -29,9 +31,9 @@ $phone_number = get_field( 'phone_number', 'option' );
 				<?php echo hurvitz_main_menu(); ?>
 
 				<div class="hr-header__bar-wrap">
-					<?php if ($popup_button_name) { ?>
+					<?php if ($popup_button_name && $contact_id) { ?>
 						<div class="hr-header__popup">
-							<a class="hr-btn" href="#"><i class="far fa-address-book"></i><?php echo esc_html($popup_button_name); ?></a>
+							<a class="js-popup-btn" href="#"><i class="far fa-address-book"></i><?php echo esc_html($popup_button_name); ?></a>
 						</div>
 					<?php } ?>
 
@@ -55,3 +57,12 @@ $phone_number = get_field( 'phone_number', 'option' );
 		</div>
 	</div>
 </header>
+
+<?php if ($contact_id) { ?>
+	<div class="hr-popup js-popup">
+		<?php if ($popup_title) { ?>
+			<h3 class="hr-popup__title"><?php echo esc_html($popup_title); ?></h3>
+		<?php } ?>
+		<?php echo do_shortcode( '[contact-form-7 id="' . $contact_id . '"]' ); ?>
+	</div>
+<?php } ?>
