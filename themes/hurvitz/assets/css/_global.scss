@@ -53,6 +53,12 @@ h6 {
   @media (max-width: 991px) {
 	margin-bottom: 15px;
   }
+
+  a {
+	font-size: inherit;
+	font-weight: inherit;
+	line-height: inherit;
+  }
 }
 
 h1 {

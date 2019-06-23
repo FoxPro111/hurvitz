@@ -14,31 +14,46 @@
 
 get_header();
 
-$hurvitz_acf_pro = class_exists('acf_pro');
-if ( $hurvitz_acf_pro && have_rows( 'shortcodes' ) ):
-	while ( have_rows( 'shortcodes' ) ) : the_row();
+$sidebar = get_field('sidebar', get_the_ID());
 
-		get_template_part( 'template-parts/content', get_row_layout() );
+$content_class = ($sidebar != 'No') ? 'col-md-9': '';
+$sidebar_enable = ($sidebar != 'No') ? true : false;
+
+if ( have_posts() ) :
+	while ( have_posts() ) :
+		the_post();
+
+		$content = get_the_content();
+
+		if ( !empty($content) ) { ?>
+			<div class="hr-editor hr-section">
+				<div class="container">
+					<div class="row">
+						<div class="col-12 <?php echo esc_attr($content_class); ?>">
+							<?php the_content(); ?>
+						</div>
+						<?php if ( $sidebar_enable ) { ?>
+							<div class="col-12 col-md-3">
+								<?php if ( !dynamic_sidebar('sidebar') ) {
+
+								} ?>
+							</div>
+						<?php } ?>
+					</div>
+				</div>
+			</div>
+		<?php }
+	endwhile;
+endif;
+
+$hurvitz_acf_pro = class_exists('acf_pro');
+
+if ( $hurvitz_acf_pro && have_rows('shortcodes') ):
+	while ( have_rows('shortcodes') ) : the_row();
+
+		get_template_part('template-parts/content', get_row_layout());
 
 	endwhile;
-else:
-	?>
-
-	<div class="hr-editor">
-		<div class="container">
-			<?php if (have_posts()) :
-				while (have_posts()) :
-					the_post(); ?>
-
-					<h1><?php echo get_the_title(); ?></h1>
-					<?php the_content(); ?>
-
-				<?php endwhile;
-			endif; ?>
-		</div>
-	</div>
-
-	<?php
 endif;
 
 get_footer();
