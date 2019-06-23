@@ -16,8 +16,9 @@ get_header();
 
 $sidebar = get_field('sidebar', get_the_ID());
 
-$content_class = ($sidebar != 'No') ? 'col-md-9': '';
-$sidebar_enable = ($sidebar != 'No') ? true : false;
+$content_class = (isset($sidebar) && $sidebar != 'No') ? 'col-md-9': '';
+$sidebar_class = (isset($sidebar) && $sidebar === 'Right') ? 'order-first' : '';
+$sidebar_enable = (isset($sidebar) && $sidebar != 'No') ? true : false;
 
 if ( have_posts() ) :
 	while ( have_posts() ) :
@@ -33,7 +34,7 @@ if ( have_posts() ) :
 							<?php the_content(); ?>
 						</div>
 						<?php if ( $sidebar_enable ) { ?>
-							<div class="col-12 col-md-3">
+							<div class="col-12 col-md-3 sidebar <?php echo esc_attr($sidebar_class); ?>">
 								<?php if ( !dynamic_sidebar('sidebar') ) {
 
 								} ?>

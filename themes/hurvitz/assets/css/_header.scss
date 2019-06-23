@@ -85,6 +85,7 @@ $menu-animation: 0.2s;
 		  }
 		}
 
+		&.current-menu-item,
 		&:hover {
 		  > a {
 			&::after {

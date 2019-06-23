@@ -1,0 +1,44 @@
+.sidebar {
+  @media (max-width: 767px) {
+	order: 1;
+  }
+
+  .search-field {
+	width: 100%;
+  }
+
+  .widget_search {
+	label {
+	  display: block;
+	}
+
+	[type="search"] {
+	  padding-top: 10px;
+	  padding-bottom: 10px;
+	}
+  }
+
+  .search-submit {
+	display: none;
+  }
+
+  .widget {
+	&:not(:last-child) {
+	  margin-bottom: 25px;
+	}
+  }
+
+  ul {
+	list-style: none;
+	padding: 0;
+	margin: 0;
+  }
+
+  a {
+	color: var(--c-grey);
+
+	&:hover {
+	  color: var(--c-blue);
+	}
+  }
+}

@@ -16,19 +16,21 @@ get_header();
 ?>
 
 <div class="hurvitz-blog">
-    <?php if ( have_posts() ) : ?>
-        <div class="hurvitz-blog__list grid">
-        <?php while ( have_posts() ) : the_post();
-	        get_template_part( 'template-parts/content', 'blog' );
-        endwhile; ?>
-        </div>
-        <?php if (paginate_links()) { ?>
-            <div class="hurvitz-blog__pagination">
-			    <?php echo paginate_links(); ?>
-            </div>
-        <?php } ?>
-    <?php endif;
-    ?>
+	<div class="container">
+		<?php if ( have_posts() ) : ?>
+			<div class="hurvitz-blog__list grid">
+				<?php while ( have_posts() ) : the_post();
+					get_template_part( 'template-parts/content', 'blog' );
+				endwhile; ?>
+			</div>
+			<?php if (paginate_links()) { ?>
+				<div class="hurvitz-blog__pagination">
+					<?php echo paginate_links(); ?>
+				</div>
+			<?php } ?>
+		<?php endif;
+		?>
+	</div>
 </div>
 
 
