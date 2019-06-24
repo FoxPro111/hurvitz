@@ -18,9 +18,8 @@
 	/* ---- FUNCTION ---- */
 	/* ------------------- */
 	const calcHeaderOffset = () => {
-		if ($('#wpadminbar')) {
-			root.style.setProperty('--admin-bar-height', $('#wpadminbar').outerHeight() + 'px');
-		}
+		const wpAdminBarHeight = $('#wpadminbar').outerHeight() || 0;
+		root.style.setProperty('--admin-bar-height', wpAdminBarHeight + 'px');
 	};
 
 	/*=================================*/
