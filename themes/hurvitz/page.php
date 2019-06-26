@@ -20,6 +20,10 @@ $content_class = (isset($sidebar) && $sidebar != 'No') ? 'col-md-9': '';
 $sidebar_class = (isset($sidebar) && $sidebar === 'Right') ? 'order-first' : '';
 $sidebar_enable = (isset($sidebar) && $sidebar != 'No') ? true : false;
 
+if (!is_front_page()) {
+	get_template_part('template-parts/content', 'breadcrumbs');
+}
+
 if ( have_posts() ) :
 	while ( have_posts() ) :
 		the_post();

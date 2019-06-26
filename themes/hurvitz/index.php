@@ -13,18 +13,21 @@
  */
 
 get_header();
+
+get_template_part('template-parts/content', 'breadcrumbs');
+
 ?>
 
-<div class="hurvitz-blog">
+<div class="hr-blog">
 	<div class="container">
 		<?php if ( have_posts() ) : ?>
-			<div class="hurvitz-blog__list grid">
+			<div class="hr-blog__list">
 				<?php while ( have_posts() ) : the_post();
 					get_template_part( 'template-parts/content', 'blog' );
 				endwhile; ?>
 			</div>
 			<?php if (paginate_links()) { ?>
-				<div class="hurvitz-blog__pagination">
+				<div class="hr-blog__pagination">
 					<?php echo paginate_links(); ?>
 				</div>
 			<?php } ?>
