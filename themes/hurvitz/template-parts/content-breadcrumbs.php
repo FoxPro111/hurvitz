@@ -1,9 +1,14 @@
 <?php
 
-$title = '';
+$category = get_queried_object();
+
+if (isset($category->term_id) && !empty($category->term_id)) {
+	$title = $category->name;
+}
+
 
 if (is_home()) {
-	$title = esc_html__('Blog', 'hurvitz');
+	$title = get_field( 'blog_title', 'option' );
 }
 
 

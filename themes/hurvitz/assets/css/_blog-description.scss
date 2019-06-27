@@ -1,0 +1,10 @@
+.hr-blog-description {
+  font-size: 15px;
+  margin-bottom: 2em;
+
+  > * {
+	&:last-child {
+	  margin-bottom: 0;
+	}
+  }
+}

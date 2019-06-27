@@ -22,9 +22,23 @@ get_template_part('template-parts/content', 'breadcrumbs');
 	<div class="container">
 		<?php if ( have_posts() ) : ?>
 			<div class="hr-blog__list">
-				<?php while ( have_posts() ) : the_post();
-					get_template_part( 'template-parts/content', 'blog' );
-				endwhile; ?>
+				<div class="row">
+					<div class="col-12 col-md-9">
+						<?php
+							get_template_part('template-parts/content', 'description');
+						?>
+						<div class="hr-blog__posts">
+							<?php while ( have_posts() ) : the_post();
+								get_template_part( 'template-parts/content', 'blog' );
+							endwhile; ?>
+						</div>
+					</div>
+					<div class="col-12 col-md-3 sidebar">
+						<?php if ( !dynamic_sidebar('sidebar') ) {
+
+						} ?>
+					</div>
+				</div>
 			</div>
 			<?php if (paginate_links()) { ?>
 				<div class="hr-blog__pagination">
