@@ -7,44 +7,35 @@
  * @package hurvitz
  */
 
-get_header();?>
+get_header();
 
-    <div class="hurvitz-single hurvitz-single__top">
-        <div class="hurvitz-single__top-info">
-            <div class="hurvitz-single__top-date"><?php echo get_the_time( 'M j' ); ?></div>
-            <div class="hurvitz-single__top-category"><?php the_category(); ?></div>
-        </div>
-		<?php
-		$feature_img = get_the_post_thumbnail_url();
-		if ( ! empty( $feature_img ) ): ?>
-            <div class="hurvitz-single__top-img"><img src="<?php echo esc_url( $feature_img ); ?>" alt=""></div>
-		<?php endif;
-		?>
-    </div>
+get_template_part('template-parts/content', 'breadcrumbs');
 
-<?php
 while ( have_posts() ) : the_post();
-	?>
-    <div class="hurvitz-single__main">
-        <div class="hurvitz-single__main-content">
-            <div class="hurvitz-single__main-text"><?php the_content(); ?></div>
-            <div class="hurvitz-single__main-tag">
-				<?php the_tags( 'Tags: ', ', ', '' ); ?>
-            </div>
-        </div>
-        <div class="hurvitz-single__main-links">
-            <div class="pagination"><p><?php previous_post_link(); ?></p></div>
-            <div class="pagination"><p><?php next_post_link(); ?></p></div>
-        </div>
-        <div class="hurvitz-single__comments">
-			<?php
-			if ( comments_open() || get_comments_number() ) :
-				comments_template();
-			endif;
-			?>
-        </div>
-    </div>
 
-<?php wp_link_pages( 'link_before=<span class="pages">&link_after=</span>&before=<div class="post-nav"> <span>' . esc_html__( "Page:", 'hurvitz' ) . ' </span> &after=</div>' ); ?>
+	?>
+	<div class="hr-single">
+		<div class="container">
+			<div class="row">
+				<div class="col-12 col-md-9">
+					<h2 class="hr-single__title"><?php echo get_the_title(); ?></h2>
+					<ul class="hr-single__top">
+						<li class="hr-single__top-date"><i class="far fa-calendar-alt"></i><?php echo get_the_date(); ?></li>
+						<li class="hr-single__top-author"><i class="far fa-user"></i><?php echo get_the_author(); ?></li>
+						<li class="hr-single__top-category"><i class="fas fa-edit"></i><?php the_category(', '); ?></li>
+					</ul>
+					<?php hurvitz_post_thumbnail(); ?>
+					<div class="hr-single__content"><?php the_content(); ?></div>
+				</div>
+				<div class="col-12 col-md-3 sidebar">
+					<?php if ( !dynamic_sidebar('sidebar') ) {
+
+					} ?>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<?php wp_link_pages('link_before=<span class="pages">&link_after=</span>&before=<div class="post-nav"> <span>' . esc_html__("Page:", 'hurvitz') . ' </span> &after=</div>'); ?>
 <?php endwhile;
 get_footer();
