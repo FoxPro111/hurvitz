@@ -9,6 +9,10 @@
 .hr-section {
   padding-top: calc(30px + 2.5vw); //
 
+  .hr-breadcrumbs + & {
+    padding-top: 40px;
+  }
+
   &:last-of-type {
     padding-bottom: calc(30px + 2.5vw);
   }

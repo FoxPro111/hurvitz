@@ -149,11 +149,11 @@ function hurvitz_scripts() {
     wp_enqueue_style( 'swiper',    get_template_directory_uri() .'/assets/css/swiper.min.css' );
     wp_enqueue_style( 'bootstrap',    get_template_directory_uri() .'/assets/css/bootstrap.css' );
     wp_enqueue_style( 'font-awesome',    get_template_directory_uri() .'/assets/css/font-awesome.css' );
-    wp_enqueue_style( 'hurvitz-main',    get_template_directory_uri() .'/assets/css/main.css', '', '1.0.5' );
+    wp_enqueue_style( 'hurvitz-main',    get_template_directory_uri() .'/assets/css/main.css', '', '1.1' );
 
 
 	wp_enqueue_script( 'swiper', get_template_directory_uri() . '/assets/js/swiper.min.js', array( 'jquery' ), '', true );
-	wp_enqueue_script( 'hurvitz', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.0.5', true );
+	wp_enqueue_script( 'hurvitz', get_template_directory_uri() . '/assets/js/script.js', array( 'jquery' ), '1.1', true );
 
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
