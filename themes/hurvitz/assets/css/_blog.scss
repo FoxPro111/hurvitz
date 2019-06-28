@@ -1,4 +1,117 @@
 .hr-blog {
   padding-top: 50px;
   padding-bottom: 50px;
+
+  .post {
+	margin-bottom: 30px;
+	padding-bottom: 30px;
+	border-bottom: 1px solid #ccc;
+
+	.entry-title {
+	  font-size: 27px;
+
+	  @media (max-width: 1200px) {
+		font-size: 24px;
+	  }
+
+	  @media (max-width: 991px) {
+		font-size: 20px;
+	  }
+	}
+  }
+
+  .post-wrap {
+	display: flex;
+	margin-left: -15px;
+	margin-right: -15px;
+
+	@media (max-width: 767px) {
+	  flex-direction: column;
+	}
+  }
+
+  .post-thumb,
+  .post-info {
+	padding-right: 15px;
+	padding-left: 15px;
+  }
+
+  .post-thumb {
+	flex: 0 0 45%;
+	position: relative;
+
+	@media (max-width: 767px) {
+	  margin-bottom: 15px;
+	}
+  }
+
+  .post-info {
+	flex: 0 0 55%;
+	display: flex;
+	flex-direction: column;
+  }
+
+  .post-excerpt {
+	font-size: 15px;
+
+	@media (max-width: 991px) {
+	  font-size: 13px;
+	}
+  }
+
+  .post-link {
+	margin-top: auto;
+	margin-left: auto;
+	background-color: var(--c-blue);
+	color: var(--c-white);
+	border-radius: 30px;
+	padding: 3px 10px;
+	display: inline-block;
+	font-size: 14px;
+	font-weight: normal;
+
+	&:hover {
+	  opacity: 0.8;
+	}
+  }
+
+  .post-categories {
+	position: absolute;
+	line-height: 1;
+	top: 5px;
+	right: 20px;
+
+	a {
+	  background-color: var(--c-blue);
+	  color: var(--c-white);
+	  border-radius: 50px;
+	  padding: 3px 8px;
+	  font-size: 14px;
+
+	  &:hover {
+		opacity: 0.7;
+	  }
+	}
+  }
+
+  &__pagination {
+	a,
+	span {
+	  font-size: 15px;
+	  margin-left: 5px;
+	}
+
+	a {
+	  color: var(--c-grey);
+
+	  &:hover {
+		color: var(--c-blue);
+	  }
+	}
+
+	span {
+	  color: var(--c-dark);
+	  font-weight: bold;
+	}
+  }
 }

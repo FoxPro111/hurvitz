@@ -24,7 +24,7 @@
 
   .widget {
 	&:not(:last-child) {
-	  margin-bottom: 25px;
+	  margin-bottom: 35px;
 	}
   }
 
@@ -39,6 +39,52 @@
 
 	&:hover {
 	  color: var(--c-blue);
+	}
+  }
+
+  .widget-title {
+	margin-bottom: 10px;
+  }
+
+  .post-date {
+	font-size: 10px;
+	display: block;
+	font-style: italic;
+  }
+
+  .textwidget {
+	.wpcf7 {
+	  direction: rtl;
+
+	  p {
+		margin-bottom: 15px;
+
+		&:last-child {
+		  margin-bottom: 0;
+		}
+	  }
+
+	  label {
+		margin-bottom: 0;
+	  }
+
+	  .ajax-loader {
+		display: none;
+	  }
+
+	  [type="submit"] {
+		width: 100%;
+		margin-top: 30px;
+	  }
+
+	  .wpcf7-not-valid-tip {
+		font-size: 12px;
+	  }
+
+	  .wpcf7-response-output {
+		font-size: 12px;
+		margin: 15px 0 0;
+	  }
 	}
   }
 }

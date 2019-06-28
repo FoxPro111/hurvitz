@@ -32,6 +32,11 @@ get_template_part('template-parts/content', 'breadcrumbs');
 								get_template_part( 'template-parts/content', 'blog' );
 							endwhile; ?>
 						</div>
+						<?php if (paginate_links()) { ?>
+							<div class="hr-blog__pagination">
+								<?php echo paginate_links(); ?>
+							</div>
+						<?php } ?>
 					</div>
 					<div class="col-12 col-md-3 sidebar">
 						<?php if ( !dynamic_sidebar('sidebar') ) {
@@ -40,11 +45,6 @@ get_template_part('template-parts/content', 'breadcrumbs');
 					</div>
 				</div>
 			</div>
-			<?php if (paginate_links()) { ?>
-				<div class="hr-blog__pagination">
-					<?php echo paginate_links(); ?>
-				</div>
-			<?php } ?>
 		<?php endif;
 		?>
 	</div>

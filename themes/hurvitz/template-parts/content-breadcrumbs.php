@@ -2,15 +2,11 @@
 
 $category = get_queried_object();
 
-if (isset($category->term_id) && !empty($category->term_id)) {
-	$title = $category->name;
-}
-
+$title = get_the_archive_title();
 
 if (is_home()) {
 	$title = get_field( 'blog_title', 'option' );
 }
-
 
 ?>
 
